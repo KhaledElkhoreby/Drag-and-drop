@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: #e3c567;
+  --scondary-color: #573d1c;
+  --border-color: #d1462f;
+  --price-color: rgb(1, 146, 1);
+  --boxshadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.dragenter {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+  border: 4px solid var(--border-color) !important;
+}
+
+.dragover {
+  background-color: #d1462f;
+}
+
+.dragleave {
+  background-color: #e3c567;
+}
+
+#checkout {
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  text-align: center;
+  box-shadow: var(--boxshadow);
+}
+
+#checkout div {
+  background-color: var(--scondary-color);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+#checkout div:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#checkout div.totalCount {
+  background-color: darkgoldenrod;
+}
+
+#checkout div.totalPrice {
+  background-color: var(--price-color);
+}
+
+#checkout div.totalPrice,
+#checkout div.totalCount {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+#right,
+#left {
+  border: 4px solid var(--scondary-color);
+  flex: 1 0 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+  row-gap: 3rem;
+  column-gap: 2rem;
+  padding: 1.9rem;
+  padding-bottom: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--boxshadow);
+  transition: all ease 0.3s;
+}
+
+#right div,
+#left div {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+#right div:hover img,
+#left div:hover img {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: 4px solid #573d1c;
+}
+
+#right div img,
+#left div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 4px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+#right div span:first-of-type,
+#left div span:first-of-type,
+#right div span:last-of-type,
+#left div span:last-of-type {
+  position: absolute;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-align: center;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border: 2px solid #000;
+  line-height: 1.6rem;
+  cursor: pointer;
+}
+
+#right div span:first-of-type,
+#left div span:first-of-type {
+  height: 2rem;
+  background-color: var(--primary-color);
+  right: -7%;
+  top: -7%;
+  width: 2rem;
+  border-radius: 50%;
+}
+
+#right div span:last-of-type,
+#left div span:last-of-type {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10%;
+  border-radius: 0.5rem;
+  background-color: var(--price-color);
+  padding: 0.45em 0.65em;
+  display: block;
+  width: 5em;
+}
